@@ -96,8 +96,12 @@ Complete the implementation of gensym. As usual, you shouldn't feel
 beholden to how the definition is introduced in the skeleton code
 below. (We'll stop mentioning this now.) *)
 
-let gensym (s : string) : string = 
-  failwith "gensym not implemented" ;;
+let gensym = 
+   let num = ref 0 in
+   fun str ->
+   let returnstring = str ^ (string_of_int !num) in
+    inc num ; 
+    returnstring ;;
 
 (*====================================================================
 Part 3: Appending mutable lists
